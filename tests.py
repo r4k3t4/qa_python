@@ -29,7 +29,7 @@ class TestBooksCollector:
 
     def test_get_books_genre_all_book(self, collector):
 
-        assert 'Гордость и предубеждение и зомби' in collector.books_genre
+        assert 'Гордость и предубеждение и зомби' and 'Шрек' and 'Маска' in collector.books_genre
 
     def test_get_books_for_children_books_for_children(self, collector):
 
