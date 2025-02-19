@@ -1,5 +1,7 @@
 # класс TestBooksCollector объединяет набор тестов, которыми мы покрываем наше приложение BooksCollector
 # обязательно указывать префикс Test
+
+from main import BooksCollector
 class TestBooksCollector:
 
     # пример теста:
@@ -33,7 +35,7 @@ class TestBooksCollector:
 
     def test_get_books_for_children_books_for_children(self, collector):
 
-               assert 'Шрек' and 'Маска' in collector.get_books_for_children()
+        assert 'Шрек' and 'Маска' in collector.get_books_for_children()
 
     def test_add_book_in_favorites_book_in_favorites(self, collector):
 
@@ -54,3 +56,14 @@ class TestBooksCollector:
         collector.add_book_in_favorites('Маска')
 
         assert 'Шрек' and 'Маска' in collector.favorites
+
+    def test_add_new_book_title_book_and_duplicate(self, collector):
+        collector = BooksCollector()
+        # добавляем одну книгу
+        collector.add_new_book('Гордость и предубеждение и зомби')
+        # добавляем дубликат
+        collector.add_new_book('Гордость и предубеждение и зомби')
+
+        list_book_genre = list(collector.books_genre.keys())
+
+        assert len(collector.books_genre.keys()) == 1 and len(list_book_genre[0]) <= 40

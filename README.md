@@ -9,3 +9,4 @@
 7. метод test_add_book_in_favorites_book_in_favorites добавляет 3 книги, добавляет 1 в избранное и проверяет ее наличие
 8. метод test_delete_book_from_favorites_delete_favorites добавляет 3 книги, добавляет 2 в избранное, удаляет 1 из избранного и проверяет ее отсутствие
 9. метод test_get_list_of_favorites_books_favorites_books добавляет 3 книги и 2 книги в избранное и проверяет, что добавилось в избранное именно 2
+10. метод test_add_new_book_title_book_and_duplicate добавляет 2 одинаковые книги и проверяет, что нету дубликатов и название не более 40 символа
